@@ -7,7 +7,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/api/:locId', function (req, res){
-	request("http://178.62.222.232/get/hbhi/1797", function(err, resp, body){
+	request("http://178.62.222.232/get/hbhi/"+req.params.locId, function(err, resp, body){
 		var data = JSON.parse(body);
 		for(s in data["hour-by-hour"].location.forecast.step)
 		{
